@@ -22,12 +22,14 @@ submit_button.click
 
 sleep 2
 
-#选定题目��?
+#选定题目集
 
 questionset= firefox.find_element(xpath: "//*[@id='contest-lib-dir-1']/a")
 questionset.click
 
-#开始答��?@i=0
+#开始答题
+
+@i=0
 
 while(true) do
     sleep 1
