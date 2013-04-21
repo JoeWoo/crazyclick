@@ -7,9 +7,9 @@ begin
   sleep 3
   #填充登录信息
   username_input = firefox.find_element(css: '#user-login-name')
-  username_input.send_keys "username"
+  username_input.send_keys "zhaoyingnan111"
   password_input = firefox.find_element(css: '#user-login-password')
-  password_input.send_keys "password"
+  password_input.send_keys "zynintel"
   #确定登录
   submit_button=firefox.find_element(xpath: "//*[@id='user-login-section']/ul/li[3]/button")
   submit_button.click
@@ -23,7 +23,7 @@ begin
   while(true) do
        sleep 2
       if (@i==4)#5题一提交    
-        firefox.find_element(xpath: "//*[@id='0']").click
+        firefox.find_element(xpath: "//*[@id='#{@i/2}']").click
         #sleep 0.5
         firefox.execute_script("document.getElementById('contest-test-control').children[2].click()")
         sleep 1
@@ -31,7 +31,7 @@ begin
         sleep 2#等待对话框刷新
         @i=0
       else
-        firefox.find_element(xpath: "//*[@id='0']").click
+        firefox.find_element(xpath: "//*[@id='#{@i/2}']").click
        # sleep 0.5
         #firefox.find_element(xpath: "//*[@id='contest-test-control']/button[2]").click
         firefox.execute_script("document.getElementById('contest-test-control').children[1].click()")
@@ -39,10 +39,12 @@ begin
       end
   end
 rescue Exception => e
-    puts firefox.current_url
-    puts '出错了~'
-    firefox.close
-    puts '正在重启程序~'
-    system('ruby C:\Users\f\Desktop\ruby_sc\crazyclick.rb')
-
+   yanzheng=@firefox.find_element(css: "#dialog;.component_poping_animation")
+    if yanzheng==nil
+        puts @firefox.current_url
+        puts '出错了~'
+        @firefox.close
+        puts '正在重启程序~'
+       system('ruby C:\Users\f\Desktop\a.rb')
+    end
 end
