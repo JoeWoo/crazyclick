@@ -47,7 +47,7 @@ end
 
 ##处理请求
 def open_url_with_proxy(url)
-  pf = File.open("proxyedu.txt","r")
+  pf = File.open("proxy.txt","r")
   d = []
   pf.each { |line| d << line }
   for var in d
