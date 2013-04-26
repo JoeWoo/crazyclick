@@ -7,7 +7,7 @@ begin
   sleep 3
   #填充登录信息
   username_input = firefox.find_element(css: '#user-login-name')
-  username_input.send_keys "#username"
+  username_input.send_keys "username"
   password_input = firefox.find_element(css: '#user-login-password')
   password_input.send_keys "password"
   #确定登录
