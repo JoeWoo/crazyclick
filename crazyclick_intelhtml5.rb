@@ -7,9 +7,9 @@ begin
   sleep 3
   #填充登录信息
   username_input = firefox.find_element(css: '#user-login-name')
-  username_input.send_keys "zhaoyingnan111"
+  username_input.send_keys "#username"
   password_input = firefox.find_element(css: '#user-login-password')
-  password_input.send_keys "zynintel"
+  password_input.send_keys "password"
   #确定登录
   submit_button=firefox.find_element(xpath: "//*[@id='user-login-section']/ul/li[3]/button")
   submit_button.click
@@ -45,6 +45,6 @@ rescue Exception => e
         puts '出错了~'
         @firefox.close
         puts '正在重启程序~'
-       system('ruby C:\Users\f\Desktop\a.rb')
+       system('ruby TheFile`sPATH')
     end
 end
